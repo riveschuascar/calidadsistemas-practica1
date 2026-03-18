@@ -2,5 +2,5 @@ projectKey=TestCalidadProy
 serverUrl=http://localhost:9000
 serverVersion=26.1.0.118079
 dashboardUrl=http://localhost:9000/dashboard?id=TestCalidadProy
-ceTaskId=ca7bcaf8-ff83-463d-a8a2-95b2b077d758
-ceTaskUrl=http://localhost:9000/api/ce/task?id=ca7bcaf8-ff83-463d-a8a2-95b2b077d758
+ceTaskId=df798d8a-c1d0-498b-b389-f405e15fbc40
+ceTaskUrl=http://localhost:9000/api/ce/task?id=df798d8a-c1d0-498b-b389-f405e15fbc40
