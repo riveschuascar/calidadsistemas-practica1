@@ -9,11 +9,11 @@ import { TipoEvento } from '../tipo-evento/tipo-evento.entity';
 export class EventoService {
   constructor(
     @InjectRepository(Evento)
-    private eventoRepository: Repository<Evento>,
+    private readonly eventoRepository: Repository<Evento>,
     @InjectRepository(Reserva)
-    private reservaRepository: Repository<Reserva>,
+    private readonly reservaRepository: Repository<Reserva>,
     @InjectRepository(TipoEvento)
-    private tipoEventoRepository: Repository<TipoEvento>,
+    private readonly tipoEventoRepository: Repository<TipoEvento>,
   ) { }
 
   async findAll(): Promise<Evento[]> {
