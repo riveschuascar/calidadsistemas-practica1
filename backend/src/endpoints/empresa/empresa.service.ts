@@ -8,9 +8,9 @@ import { Usuario } from '../../endpoints/usuario/usuario.entity';
 export class EmpresaService {
   constructor(
     @InjectRepository(Empresa)
-    private empresaRepository: Repository<Empresa>,
+    private readonly empresaRepository: Repository<Empresa>,
     @InjectRepository(Usuario)
-    private usuarioRepository: Repository<Usuario>,
+    private readonly usuarioRepository: Repository<Usuario>,
   ) { }
 
   async findAll(): Promise<Empresa[]> {
