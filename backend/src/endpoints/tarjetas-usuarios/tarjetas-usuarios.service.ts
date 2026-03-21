@@ -15,7 +15,7 @@ export class TarjetasUsuariosService {
       }
 
     async getByUser(ci_usuario: number) {
-        const response = await this.tarjetaRepository.findBy({usuario: ci_usuario});
+        return  await this.tarjetaRepository.findBy({usuario: ci_usuario});
     }
     async create(tarjeta: Partial<TarjetasUsuarios>) {
         const salt = await bcrypt.genSalt();
