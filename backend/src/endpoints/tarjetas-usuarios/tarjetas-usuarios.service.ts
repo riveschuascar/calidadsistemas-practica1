@@ -8,7 +8,7 @@ import * as bcrypt from 'bcrypt';
 export class TarjetasUsuariosService {
     constructor(
         @InjectRepository(TarjetasUsuarios)
-        private tarjetaRepository: Repository<TarjetasUsuarios>,
+        private readonly tarjetaRepository: Repository<TarjetasUsuarios>,
       ) {}
       async getByNumber(num_tarjeta: string) {
         const response = await this.tarjetaRepository.findOneBy({numero_tarjeta: num_tarjeta});
