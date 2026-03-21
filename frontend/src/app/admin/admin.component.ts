@@ -12,7 +12,7 @@ import { UsuariosService } from '../services/usuarios.service';
 export class AdminComponent implements OnInit {
   users: any[] = [];
 
-  constructor(private usuariosService: UsuariosService) {} // Inyecta UsuariosService
+  constructor(private readonly usuariosService: UsuariosService) {} // Inyecta UsuariosService
 
   ngOnInit() {
     this.getUsuarios();
