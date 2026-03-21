@@ -1,7 +1,6 @@
-import { Component,OnInit } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { Router, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { Router } from '@angular/router';
 import { EspacioPublicoService } from './../services/espacios-publicos.service';
 
 @Component({
@@ -11,8 +10,10 @@ import { EspacioPublicoService } from './../services/espacios-publicos.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
-export class HomeComponent {
-  constructor(private router: Router, private espacioServicio: EspacioPublicoService){
+export class HomeComponent implements OnInit {
+  constructor(
+    private readonly router: Router,
+    private readonly espacioServicio: EspacioPublicoService){
   }
 
   highlights = [

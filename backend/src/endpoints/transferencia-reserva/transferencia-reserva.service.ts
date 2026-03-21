@@ -7,7 +7,7 @@ import { TransferenciaReserva } from './transferencia-reserva.entity';
 export class TransferenciaReservaService {
   constructor(
     @InjectRepository(TransferenciaReserva)
-    private reservaRepository: Repository<TransferenciaReserva>,
+    private readonly reservaRepository: Repository<TransferenciaReserva>,
   ) { }
 
   async findAll(): Promise<TransferenciaReserva[]> {
