@@ -1,4 +1,4 @@
-import { BadRequestException, Injectable, NotFoundException } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { TarjetasUsuarios } from './tarjetas-usuarios.entity';
@@ -8,14 +8,14 @@ import * as bcrypt from 'bcrypt';
 export class TarjetasUsuariosService {
     constructor(
         @InjectRepository(TarjetasUsuarios)
-        private tarjetaRepository: Repository<TarjetasUsuarios>,
+        private readonly tarjetaRepository: Repository<TarjetasUsuarios>,
       ) {}
       async getByNumber(num_tarjeta: string) {
-        const response = await this.tarjetaRepository.findOneBy({numero_tarjeta: num_tarjeta});
-    }
+      return await this.tarjetaRepository.findOneBy({ numero_tarjeta: num_tarjeta });
+      }
 
     async getByUser(ci_usuario: number) {
-        const response = await this.tarjetaRepository.findBy({usuario: ci_usuario});
+        return  await this.tarjetaRepository.findBy({usuario: ci_usuario});
     }
     async create(tarjeta: Partial<TarjetasUsuarios>) {
         const salt = await bcrypt.genSalt();

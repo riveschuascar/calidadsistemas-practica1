@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Put, Delete, Body, Param, Query } from '@nestjs/common';
+import { Controller, Get, Post, Body, Param, Query } from '@nestjs/common';
 import { TarjetasUsuarios } from './tarjetas-usuarios.entity';
 import { TarjetasUsuariosService } from './tarjetas-usuarios.service';
 
@@ -22,7 +22,7 @@ export class TarjetasUsuariosController {
   create(@Body() tarjetaBody: Partial<TarjetasUsuarios>) {
     console.log(tarjetaBody);
     try {
-        return this.tarjetaSercive.create(tarjetaBody);
+        return await this.tarjetaSercive.create(tarjetaBody);
     } catch (error: any) {
         throw error;
     }
