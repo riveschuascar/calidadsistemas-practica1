@@ -9,7 +9,7 @@ import * as bcrypt from 'bcrypt';
 export class UsuarioService {
   constructor(
     @InjectRepository(Usuario)
-    private usuarioRepository: Repository<Usuario>,
+    private readonly usuarioRepository: Repository<Usuario>,
   ) {}
 
   async findAll(): Promise<Usuario[]> {

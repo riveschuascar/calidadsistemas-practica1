@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Put, Patch, Delete, Body, Param, BadRequestException, InternalServerErrorException, NotFoundException, UseGuards } from '@nestjs/common';
+import { Controller, Get, Post, Put, Patch, Delete, Body, Param, BadRequestException, InternalServerErrorException, UseGuards } from '@nestjs/common';
 import { UsuarioService } from './usuario.service';
 import { Usuario } from './usuario.entity';
 import { AuthGuard } from 'src/modules/auth/guard/auth.guard';  // Importa el AuthGuard
@@ -23,7 +23,7 @@ export class UsuarioController {
   }
 
   @Post()
-  create(@Body() usuarioData: Partial<Usuario>): Promise<Usuario> {
+  async create(@Body() usuarioData: Partial<Usuario>): Promise<Usuario> {
     try {
       usuarioData.nombre = usuarioData.nombre || 'Usuario temporal';
       usuarioData.ap_paterno = usuarioData.ap_paterno || 'Apellido temporal';
@@ -31,7 +31,7 @@ export class UsuarioController {
       usuarioData.direccion = usuarioData.direccion || 'Sin dirección';
       usuarioData.telefono = usuarioData.telefono || 'Sin teléfono';
 
-      return this.usuarioService.create(usuarioData);
+      return await this.usuarioService.create(usuarioData);
     } catch (error) {
       if (error.code === 'ER_DUP_ENTRY') {
         throw new BadRequestException('El email o CI ya está registrado');
@@ -56,7 +56,7 @@ export class UsuarioController {
     @Body() partialData: Partial<Usuario>,
   ): Promise<Usuario> {
     try {
-      if (isNaN(id)) {
+      if (Number.isNaN(id)) {
         throw new BadRequestException('El ID proporcionado no es válido');
       }
 
