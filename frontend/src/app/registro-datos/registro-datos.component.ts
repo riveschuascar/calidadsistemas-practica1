@@ -23,8 +23,8 @@ export class RegistroDatosComponent {
   errorMessage = '';
 
   constructor(
-    private usuariosService: UsuariosService,
-    private router: Router
+    private readonly usuariosService: UsuariosService,
+    private readonly router: Router
   ) {}
 
   async onRegistroDatosSubmit() {
@@ -39,7 +39,7 @@ export class RegistroDatosComponent {
 
       // Realizar la actualización de datos del usuario
       const response = await this.usuariosService.updateUsuarioDatos(
-        parseInt(ciUsuario, 10),
+        Number.parseInt(ciUsuario, 10),
         this.registroDatosData
       );
 
