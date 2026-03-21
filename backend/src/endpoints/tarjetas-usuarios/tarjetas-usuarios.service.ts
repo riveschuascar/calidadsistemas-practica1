@@ -11,8 +11,8 @@ export class TarjetasUsuariosService {
         private readonly tarjetaRepository: Repository<TarjetasUsuarios>,
       ) {}
       async getByNumber(num_tarjeta: string) {
-        const response = await this.tarjetaRepository.findOneBy({numero_tarjeta: num_tarjeta});
-    }
+      return await this.tarjetaRepository.findOneBy({ numero_tarjeta: num_tarjeta });
+      }
 
     async getByUser(ci_usuario: number) {
         const response = await this.tarjetaRepository.findBy({usuario: ci_usuario});
