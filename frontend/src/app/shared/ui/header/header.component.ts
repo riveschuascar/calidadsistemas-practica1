@@ -17,9 +17,9 @@ export class HeaderComponent implements OnInit {
   userRole: number | null = null; // Declarar `userRole` aquí
   
   constructor(
-    private authStateService: AuthStateService,
-    private authService: AuthService,
-    private router: Router
+    private readonly authStateService: AuthStateService,
+    private readonly authService: AuthService,
+    private readonly router: Router
   ) {}
 
   ngOnInit(): void {
