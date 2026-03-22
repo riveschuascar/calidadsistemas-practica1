@@ -33,7 +33,7 @@ export class RegisterComponent {
     this.emailError = '';
     this.ciUsuarioError = '';
 
-    if (!this.registerData.ci || isNaN(this.registerData.ci)) {
+    if (!this.registerData.ci || Number.isNaN(this.registerData.ci)) {
       this.ciUsuarioError = 'El CI de usuario es obligatorio y debe ser un número válido';
       return;
     }
