@@ -16,7 +16,7 @@ export class ReservasComponent implements OnInit {
 
  constructor(
   private readonly route: ActivatedRoute,
-  private router: Router,
+  private readonly router: Router,
   private espacioService: EspacioPublicoService
 ) {}
 
