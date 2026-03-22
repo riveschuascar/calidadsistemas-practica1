@@ -41,24 +41,24 @@
   }
   
   /* Estilo para cada botón de espacio */
-  .espacio-btn {
-    background-color: #007b5a;
-    color: white;
-    font-size: 18px;
-    padding: 15px 25px;
-    border: none;
-    border-radius: 50px;
-    text-transform: uppercase;
-    font-weight: bold;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    white-space: nowrap;
-  }
+ .espacio-btn {
+  background-color: #007b5a;
+  color: white;
+  font-size: 18px;
+  padding: 15px 25px;
+  border: none;
+  border-radius: 50px;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  white-space: nowrap;
+}
   
   /* Efecto hover para los botones */
   .espacio-btn:hover {
@@ -92,25 +92,6 @@
       padding: 12px 20px;
     }
   }
-  
-  
-
-.espacio-btn {
-  background-color: #50c079;
-  color: #000;
-  border: none;
-  border-radius: 10px;
-  padding: 15px 30px; /* Aumenta el tamaño del botón */
-  font-size: 20px; /* Aumenta el tamaño del texto */
-  font-weight: bold; /* Aplica negrita al texto */
-  cursor: pointer;
-  transition: transform 0.2s;
-  margin-top: 15px;
-}
-
-.espacio-btn:hover {
-  transform: scale(1.1);
-}
 
 /* Image container styling */
 .lugares-deportivos, .lugares-verdes, .lugares-culturales {

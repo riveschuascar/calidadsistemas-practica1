@@ -26,7 +26,7 @@ export class FormularioComponent implements OnInit {
   // Nueva propiedad para controlar la visibilidad del mensaje de solicitud
   mostrarMensaje: boolean = false;
 
-  constructor(private espacioService: EspacioPublicoService, private reservaService: ReservaService) {}
+constructor(private readonly espacioService: EspacioPublicoService, private readonly reservaService: ReservaService) {}
 
   ngOnInit(): void {
     this.espacio = this.espacioService.getEspacioSeleccionado();

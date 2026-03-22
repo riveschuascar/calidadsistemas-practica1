@@ -1,6 +1,6 @@
 import { Component, OnInit} from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ActivatedRoute, Router, RouterLink } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { EspacioPublicoService } from '../../services/espacios-publicos.service';
 
 @Component({
@@ -14,7 +14,7 @@ export class EspaciosComponent implements OnInit {
   espacios: any[] = [];
   tipo: any ='';
 
-  constructor(private espacioPublicoService: EspacioPublicoService, private route: ActivatedRoute) {}
+constructor(private readonly espacioPublicoService: EspacioPublicoService, private readonly route: ActivatedRoute) {}
 
   async ngOnInit(): Promise<void> {
     this.route.queryParamMap.subscribe((params) => {
