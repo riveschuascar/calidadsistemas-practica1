@@ -3,7 +3,7 @@ import { JwtService } from '@nestjs/jwt';
 
 @Injectable()
 export class AuthGuard implements CanActivate {
-  constructor(private readonly jwtService: JwtService) {}
+  constructor(private readonly jwtService: JwtService) { }
 
   async canActivate(context: ExecutionContext): Promise<boolean> {
     const request = context.switchToHttp().getRequest();
@@ -11,8 +11,8 @@ export class AuthGuard implements CanActivate {
 
     // esta webada esta hardcodeada para migrar las contrasenias para que funcione jwt
     //if (url === '/usuarios/migrate-passwords') {
-      //console.log('Acceso permitido: ruta pública migrate-passwords.');
-      //return true;
+    //console.log('Acceso permitido: ruta pública migrate-passwords.');
+    //return true;
     //}
 
     // Permitir acceso público al endpoint de login
@@ -30,7 +30,15 @@ export class AuthGuard implements CanActivate {
       const user = await this.jwtService.verifyAsync(token);
       request.user = user; // Adjuntar el usuario al request
     } catch (error) {
-      throw new UnauthorizedException('Token inválido o expirado');
+      if (error.name === 'TokenExpiredError') {
+        throw new UnauthorizedException('El token ha expirado');
+      }
+      if (error.name === 'JsonWebTokenError') {
+        throw new UnauthorizedException('Token inválido');
+      }
+
+      // Para otros errores, lanzar una excepción generica
+      throw new UnauthorizedException('Error de autenticación');
     }
 
     return true;
