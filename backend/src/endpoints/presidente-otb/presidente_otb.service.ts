@@ -6,12 +6,12 @@ import { Usuario } from '../usuario/usuario.entity';
 
 @Injectable()
 export class PresidenteOtbService {
-  constructor(
-    @InjectRepository(PresidenteOtb)
-    private presidenteOtbRepository: Repository<PresidenteOtb>,
-    @InjectRepository(Usuario)
-    private usuarioRepository: Repository<Usuario>,
-  ) { }
+constructor(
+  @InjectRepository(PresidenteOtb)
+  private readonly presidenteOtbRepository: Repository<PresidenteOtb>,
+  @InjectRepository(Usuario)
+  private readonly usuarioRepository: Repository<Usuario>,
+) {}
 
   async findAll(): Promise<PresidenteOtb[]> {
     return this.presidenteOtbRepository.find({ relations: ['usuario'] });
