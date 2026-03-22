@@ -10,7 +10,7 @@ export class PresidenteOtbService {
   @InjectRepository(PresidenteOtb)
   private readonly presidenteOtbRepository: Repository<PresidenteOtb>,
   @InjectRepository(Usuario)
-  private usuarioRepository: Repository<Usuario>,
+  private readonlyusuarioRepository: Repository<Usuario>,
 ) { }
 
   async findAll(): Promise<PresidenteOtb[]> {
