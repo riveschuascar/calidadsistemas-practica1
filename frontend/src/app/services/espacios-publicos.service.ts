@@ -9,7 +9,7 @@ export class EspacioPublicoService {
   private espacios: any[] = []; // Almacén temporal de espacios
   private espacioSeleccionado: any = null; // Almacén temporal del espacio seleccionado
 
-  constructor(private axiosService: AxiosService) {}
+  constructor(private readonly axiosService: AxiosService) {}
 
   async getAll(): Promise<any[]> {
     if (this.espacios.length > 0) {

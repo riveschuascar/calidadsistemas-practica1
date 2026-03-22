@@ -7,9 +7,9 @@ import { CustomAxiosRequestConfig } from './custom-axios-request-config';
   providedIn: 'root',
 })
 export class AxiosService {
-  private axiosInstance: AxiosInstance;
+  private readonly axiosInstance: AxiosInstance;
 
-  constructor(private injector: Injector) {
+  constructor(private readonly injector: Injector) {
     this.axiosInstance = axios.create({
       baseURL: 'https://api-espacios-bo.onrender.com',
       headers: {
