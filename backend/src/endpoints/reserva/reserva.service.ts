@@ -7,7 +7,7 @@ import { Reserva } from './reserva.entity';
 export class ReservaService {
   constructor(
     @InjectRepository(Reserva)
-    private reservaRepository: Repository<Reserva>,
+    private readonly reservaRepository: Repository<Reserva>,
   ) { }
 
   async findAll(): Promise<Reserva[]> {
