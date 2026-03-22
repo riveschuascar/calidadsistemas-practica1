@@ -7,7 +7,7 @@ import { Injectable } from "@angular/core";
 export class ReservaService {
     private readonly baseUrl = '/reservas';
 
-    constructor(private axiosService: AxiosService) {}
+    constructor(private readonly axiosService: AxiosService) {}
 
     async postReserva(body:{ usuario: number, espacio_publico: number, fecha: string, hora_inicio: string, hora_fin: string}) {
         try {
