@@ -25,7 +25,7 @@ export class RegisterComponent {
 
   constructor(
     private readonly usuariosService: UsuariosService,
-    private router: Router
+    private readonly router: Router
   ) {}
 
   async onRegisterSubmit() {
