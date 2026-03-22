@@ -14,8 +14,8 @@ export class AuthService {
   private readonly apiUrl = '/auth';
 
   constructor(
-    private axiosService: AxiosService,
-    private authStateService: AuthStateService
+    private readonly axiosService: AxiosService,
+    private readonly authStateService: AuthStateService
   ) {}
 
   async login(email: string, password: string): Promise<AuthResponse> {
