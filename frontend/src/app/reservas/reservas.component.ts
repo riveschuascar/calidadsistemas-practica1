@@ -14,11 +14,11 @@ export class ReservasComponent implements OnInit {
   tipo: string = ''; // Parámetro de tipo
   espacios: any[] = []; // Espacios filtrados
 
-  constructor(
-    private route: ActivatedRoute,
-    private router: Router,
-    private espacioService: EspacioPublicoService
-  ) {}
+ constructor(
+  private readonly route: ActivatedRoute,
+  private router: Router,
+  private espacioService: EspacioPublicoService
+) {}
 
   ngOnInit(): void {
     // Escucha cambios en la ruta para obtener el parámetro 'tipo'
