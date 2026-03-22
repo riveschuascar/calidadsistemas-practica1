@@ -17,7 +17,7 @@ export class ReservasComponent implements OnInit {
  constructor(
   private readonly route: ActivatedRoute,
   private readonly router: Router,
-  private espacioService: EspacioPublicoService
+  private readonly espacioService: EspacioPublicoService
 ) {}
 
   ngOnInit(): void {
