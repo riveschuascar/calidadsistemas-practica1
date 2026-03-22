@@ -7,7 +7,7 @@ import { AxiosService } from './axios.service';
 export class UsuariosService {
   private readonly apiUrl = '/usuarios';
 
-  constructor(private axiosService: AxiosService) {}
+  constructor(private readonly axiosService: AxiosService) {}
 
   async getUsuarios() {
     try {
