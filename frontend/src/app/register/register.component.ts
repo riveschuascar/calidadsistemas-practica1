@@ -24,8 +24,8 @@ export class RegisterComponent {
   ciUsuarioError = '';
 
   constructor(
-    private usuariosService: UsuariosService,
-    private router: Router
+    private readonly usuariosService: UsuariosService,
+    private readonly router: Router
   ) {}
 
   async onRegisterSubmit() {
@@ -33,7 +33,7 @@ export class RegisterComponent {
     this.emailError = '';
     this.ciUsuarioError = '';
 
-    if (!this.registerData.ci || isNaN(this.registerData.ci)) {
+    if (!this.registerData.ci || Number.isNaN(this.registerData.ci)) {
       this.ciUsuarioError = 'El CI de usuario es obligatorio y debe ser un número válido';
       return;
     }
@@ -59,7 +59,7 @@ export class RegisterComponent {
       const response = await this.usuariosService.createUsuario(usuario);
       console.log('Usuario registrado:', response);
 
-      if (response && response.ci) { // Asegúrate de que la respuesta tiene el campo esperado
+      if (response?.ci) { // Asegúrate de que la respuesta tiene el campo esperado
         console.log('Usuario registrado:', response);
         localStorage.setItem('ci_usuario', response.ci.toString());
         this.router.navigate(['/registro-datos']);
