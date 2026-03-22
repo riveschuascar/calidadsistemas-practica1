@@ -24,7 +24,7 @@ export class RegisterComponent {
   ciUsuarioError = '';
 
   constructor(
-    private usuariosService: UsuariosService,
+    private readonly usuariosService: UsuariosService,
     private router: Router
   ) {}
 
