@@ -14,7 +14,7 @@ export class EspaciosComponent implements OnInit {
   espacios: any[] = [];
   tipo: any ='';
 
-  constructor(private readonly espacioPublicoService: EspacioPublicoService, private route: ActivatedRoute) {}
+constructor(private readonly espacioPublicoService: EspacioPublicoService, private readonly route: ActivatedRoute) {}
 
   async ngOnInit(): Promise<void> {
     this.route.queryParamMap.subscribe((params) => {
