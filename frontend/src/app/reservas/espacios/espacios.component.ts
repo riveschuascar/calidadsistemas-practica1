@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { EspacioPublicoService } from '../../services/espacios-publicos.service';
@@ -15,18 +15,20 @@ export class EspaciosComponent implements OnInit {
   tipo: any ='';
 
 constructor(private readonly espacioPublicoService: EspacioPublicoService, private readonly route: ActivatedRoute) {}
-
-  async ngOnInit(): Promise<void> {
+  ngOnInit(): void {
     this.route.queryParamMap.subscribe((params) => {
       this.tipo = params.get('tipo');
       console.log('tipo recibido:', this.tipo);
+
+      this.espacioPublicoService.getByType(this.tipo)
+        .then((data) => {
+          this.espacios = data;
+          console.log('Datos cargados correctamente', this.espacios);
+        })
+        .catch((error) => {
+          console.error('Error al cargar los espacios publicos:', error);
+        });
     });
-    try {
-      this.espacios = await this.espacioPublicoService.getByType(this.tipo);
-      console.log('Datos cargados correctamente', this.espacios);
-    } catch (error) {
-      console.error('Error al cargar los espacios publicos:', error);
-    }
   }
 
   selecEspacio(espacio: any) {
