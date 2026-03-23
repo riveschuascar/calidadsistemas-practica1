@@ -11,7 +11,7 @@ export class AxiosService {
 
   constructor(private readonly injector: Injector) {
     this.axiosInstance = axios.create({
-      baseURL: 'https://api-espacios-bo.onrender.com',
+      baseURL: 'http://localhost:3000',
       headers: {
         'Content-Type': 'application/json',
       },

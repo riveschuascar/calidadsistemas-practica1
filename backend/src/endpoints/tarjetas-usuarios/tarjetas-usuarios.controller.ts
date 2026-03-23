@@ -22,7 +22,7 @@ export class TarjetasUsuariosController {
   create(@Body() tarjetaBody: Partial<TarjetasUsuarios>) {
     console.log(tarjetaBody);
     try {
-        return await this.tarjetaSercive.create(tarjetaBody);
+        return this.tarjetaSercive.create(tarjetaBody);
     } catch (error: any) {
         throw error;
     }

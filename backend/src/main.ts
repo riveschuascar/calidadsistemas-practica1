@@ -8,7 +8,7 @@ async function bootstrap() {
 
   // Configuración de CORS
   app.enableCors({
-    origin: 'https://espacios-bolivia.onrender.com',
+    origin: 'http://localhost:4200',
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     allowedHeaders: 'Content-Type, Authorization',
     credentials: true,
