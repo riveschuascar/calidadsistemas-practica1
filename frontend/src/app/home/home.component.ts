@@ -13,7 +13,7 @@ import { EspacioPublicoService } from './../services/espacios-publicos.service';
 export class HomeComponent implements OnInit {
   constructor(
     private readonly router: Router,
-    private readonly espacioServicio: EspacioPublicoService){
+    private readonly espacioServicio: EspacioPublicoService) {
   }
 
   highlights = [
@@ -49,14 +49,17 @@ export class HomeComponent implements OnInit {
   interval: any;
 
 
-  async ngOnInit(): Promise<void> {
-    try {
-      this.carousel = await this.espacioServicio.getAll();
-      console.log('Datos cargados correctamente', this.carousel);
-      this.startAutoSlide();
-    } catch (error) {
-      console.error('Error al cargar los espacios publicos:', error);
-    }
+  ngOnInit(): void {
+    this.espacioServicio
+      .getAll()
+      .then((data) => {
+        this.carousel = data;
+        console.log('Datos cargados correctamente', this.carousel);
+        this.startAutoSlide();
+      })
+      .catch((error) => {
+        console.error('Error al cargar los espacios publicos:', error);
+      });
   }
 
   scrollTo(elementId: string): void {
