@@ -31,13 +31,6 @@ INSERT INTO `permisos` (nombre) VALUES
     ('Ambiental'),
     ('Transito');
 
-INSERT INTO `estados` (estado) VALUES
-	('por pagar'),
-    ('pagada'),
-    ('pendiente'),
-    ('realizada'),
-    ('cancelada');
-
 INSERT INTO `usuarios` (ci, nombre, ap_paterno, ap_materno, email, contrasena, direccion, telefono, rol, estado) VALUES
     (3, 'presi1', '*', '*', 'presi1@gmail.com', '$2b$10$yqx7sIkFS3JP6bKk7zYDh.KrJmauKcVurhBl355iQbyhlzIwecEyC', 'direccion', '12345678', 3, 2),
     (4, 'presi2', '*', '*', 'presi2@gmail.com', '$2b$10$Z3VhwNnl9bMzun/nQIdDX.2L.UDjgfDLBSi9jqe08x1Tc9.LAzniS', 'direccion', '21345678', 3, 2),
